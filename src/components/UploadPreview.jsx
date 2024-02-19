@@ -4,7 +4,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import {useState} from 'react'
 
 const UploadPreview = ({setImageUrl, imageUrl}) => {
-    const [uploading, setUploading] = useState(true)
+    const [uploading, setUploading] = useState(false)
     
     const handleFileChange = async e => {
         const file = e.target.files[0]

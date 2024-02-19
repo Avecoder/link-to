@@ -14,6 +14,7 @@ const AddLink = ({social, url, updateItems, removeItem, id}) => {
         if(currentUrl.length > 0) setEmptyField(false)
     }, [currentUrl])
 
+
     
 
     return (
@@ -21,9 +22,12 @@ const AddLink = ({social, url, updateItems, removeItem, id}) => {
             <div className="add-link rounded-md p-5 flex flex-col gap-y-5">
                 <div className="flex flex-wrap w-full gap-3">
                     {
-                        allSocial.map(({Icon, title}, i) => 
-                            <IconsButton setValue={() => setCurrentSocial(title)} key={i} Icon={Icon} active={title === currentSocial}/>
-                        )
+                        allSocial.map(({Icon, title}, i) => {
+                            // console.log(title == currentSocial)
+                            return (
+                                <IconsButton setValue={() => setCurrentSocial(title)} key={i} Icon={Icon} active={title == currentSocial}/>
+                            )
+                        })
                     }
                 </div>
                 <Input 

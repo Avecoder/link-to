@@ -49,7 +49,7 @@ const LinkCard = ({Icon, url, text, children, edit, editItems, id, imageUrl, but
                     {
                         search !== '?type=edit' && 
                         <>
-                            <IconsButton Icon={CopyLink} setValue={copyLink} />
+                            <Link to={`${location.protocol}//${location.host}/${id}`} target="_blank"><IconsButton Icon={CopyLink} setValue={copyLink} /></Link>
                             <IconsButton red Icon={Trash} setValue={removeFromDatabase} />
                         </>
                     }

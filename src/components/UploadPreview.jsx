@@ -4,7 +4,7 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage"
 import {useState} from 'react'
 
 const UploadPreview = ({setImageUrl, imageUrl}) => {
-    const [uploading, setUploading] = useState(false)
+    const [uploading, setUploading] = useState(true)
     
     const handleFileChange = async e => {
         const file = e.target.files[0]
@@ -31,9 +31,9 @@ const UploadPreview = ({setImageUrl, imageUrl}) => {
                     ?
                     <>
                         <span>Upload to server</span>
-                        <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        <div className="custom-loader"></div>
                     </>
-                    :
+                        :
                     <>
                         <span>{imageUrl.length ? 'Change preview' : 'Upload preview'}</span>
                         <div className="upload-icon">
